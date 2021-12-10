@@ -12,8 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
+          ref: ${GITHUB_SHA}
           fetch-depth: 0
-      - run: ls
       - name: Dockerfile lint using Hadolint
         uses: hadolint/hadolint-action@v1.6.0
         with:
