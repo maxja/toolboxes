@@ -2,7 +2,15 @@ name: Build, Check & Publish
 on:
   - push
 jobs:
-  build-tool-box:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: . /etc/os-release && echo "Hello from box ${ID_LIKE} / ${ID}\n"
+      - run: . /etc/os-release && echo "Build ${ID_LIKE} / ${ID}\n"
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: . /etc/os-release && echo "Check ${ARCH}\n"
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Publish $(uname -m)\n"
