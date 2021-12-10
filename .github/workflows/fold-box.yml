@@ -7,10 +7,12 @@ jobs:
     steps:
       - run: . /etc/os-release && echo "Build ${ID_LIKE} / ${ID}\n"
   check:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - run: . /etc/os-release && echo "Check ${ARCH}\n"
   publish:
+    needs: check
     runs-on: ubuntu-latest
     steps:
       - run: echo "Publish $(uname -m)\n"
