@@ -1,0 +1,8 @@
+name: Build, Check & Publish
+on:
+  - push
+jobs:
+  build-tool-box:
+    runs-on: ubuntu-latest
+    steps:
+      - run: . /etc/os-release && echo "Hello from box ${ID_LIKE} / ${ID}\n"
