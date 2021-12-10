@@ -1,0 +1,24 @@
+name: Build, Check & Publish
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Branch ref ${GITHUB_REF}\n"
+      - run: echo "Branch name ${GITHUB_REF_NAME}\n"
+      - run: echo "Runner name ${RUNNER_NAME}\n"
+      - run: echo "Runner OS ${RUNNER_OS}\n"
+      - run: echo "Runner Arch ${RUNNER_ARCH}\n"
+  # check:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: . /etc/os-release && echo "Check ${ARCH}\n"
+  # publish:
+  #   needs: check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "Publish $(uname -m)\n"
