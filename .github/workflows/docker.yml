@@ -9,7 +9,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@2
+      - run: ls -a
       - name: Dockerfile lint using Hadolint
         uses: hadolint/hadolint-action@v1.6.0
         with:
