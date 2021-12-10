@@ -1,7 +1,9 @@
 name: Build, Check & Publish
 
 on:
-  - push
+  push:
+    branches:
+      - 'feature/**'
 
 jobs:
   build:
