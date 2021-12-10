@@ -7,9 +7,12 @@ on:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@${GITHUB_SHA}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - run: ls
       - name: Dockerfile lint using Hadolint
         uses: hadolint/hadolint-action@v1.6.0
